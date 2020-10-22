@@ -9,7 +9,7 @@ class KursController extends Controller
 {
     public function all()
     {
-        return response(Kurs::all());
+        return response(Kurs::orderBy('date_created', 'desc')->get());
     }
 
     public function create(Request $request)
@@ -17,7 +17,7 @@ class KursController extends Controller
         $validated = $this->validate($request, [
             'bank' => 'required',
             'kurs_beli' => 'required|numeric',
-            'kurs_jual' => 'required|numeric|gte:kurs_beli',
+            'kurs_jual' => 'required|numeric',
         ]);
 
         $kurs = Kurs::create($validated);
@@ -49,7 +49,7 @@ class KursController extends Controller
         $validated = $this->validate($request, [
             'bank' => 'required',
             'kurs_beli' => 'required|numeric',
-            'kurs_jual' => 'required|numeric|gte:kurs_beli',
+            'kurs_jual' => 'required|numeric',
         ]);
 
         $kurs = Kurs::find($id);

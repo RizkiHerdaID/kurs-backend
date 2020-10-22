@@ -8,7 +8,7 @@ class UsdController extends Controller{
 
     public function all()
     {
-        return response(Usd::all());
+        return response(Usd::orderBy('date_label', 'desc')->get());
     }
 
     public function create(Request $request)

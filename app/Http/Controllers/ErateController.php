@@ -11,16 +11,16 @@ class ErateController extends Controller
 
     public function all()
     {
-        return response(Erate::all());
+        return response(Erate::orderBy('date_created', 'desc')->get());
     }
 
     public function create(Request $request)
     {
         $validated = $this->validate($request, [
             'erate_beli' => 'required|numeric',
-            'erate_jual' => 'required|numeric|gte:erate_beli',
+            'erate_jual' => 'required|numeric',
             'ttcounter_beli' => 'required|numeric',
-            'ttcounter_jual' => 'required|numeric|gte:ttcounter_beli',
+            'ttcounter_jual' => 'required|numeric',
         ]);
 
         $erate = Erate::create($validated);
@@ -51,9 +51,9 @@ class ErateController extends Controller
         }
         $validated = $this->validate($request, [
             'erate_beli' => 'required|numeric',
-            'erate_jual' => 'required|numeric|gte:erate_beli',
+            'erate_jual' => 'required|numeric',
             'ttcounter_beli' => 'required|numeric',
-            'ttcounter_jual' => 'required|numeric|gte:ttcounter_beli',
+            'ttcounter_jual' => 'required|numeric',
         ]);
 
         $erate = Erate::find($id);
