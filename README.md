@@ -14,7 +14,7 @@ Projek ini menggunakan Framework Lumen (PHP).
 
 Pastikan composer telah terinstall
 
-Jalankan perintah composer berikut pada root:
+Jalankan perintah composer berikut pada root folder:
 
 ```bash
 composer install
@@ -22,7 +22,7 @@ composer install
 
 Nb: Proses instalasi menggunakan composer pada Windows umumnya akan berlangsung cukup lama.
 
-Jika selesai, jalankan aplikasi menggunakan perintah berikut:
+Jika selesai, selanjutnya jalankan aplikasi menggunakan perintah berikut:
 
 ```bash
 php -S localhost:8000 -t public
