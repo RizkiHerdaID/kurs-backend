@@ -29,3 +29,5 @@ php -S localhost:8000 -t public
 ```
 
 Proses selesai, selanjutnya jalankan aplikasi web.
+
+Berikut link Postman Collection yang dapat digunakan untuk keperluan testing: [Klik disini](https://www.getpostman.com/collections/630b6771961cc7f53433)
