@@ -27,7 +27,30 @@ Catatan: Proses instalasi menggunakan composer pada Windows umumnya akan berlang
 
 ### Membuat file .env
 
-Copy & paste file .env.example lalu isi variable-variable yang berhubungan dengan database. Dalam petunjuk ini saya misalkan Anda menamakan database aplikasi dengan nama "kurs"
+Buatlah file .env pada root folder dengan isian sebagai berikut:
+
+```env
+APP_NAME=Kurs
+APP_ENV=local
+APP_KEY=
+APP_DEBUG=true
+APP_URL=http://localhost
+APP_TIMEZONE=UTC
+
+LOG_CHANNEL=stack
+LOG_SLACK_WEBHOOK_URL=
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=kurs
+DB_USERNAME=root
+DB_PASSWORD=
+
+CACHE_DRIVER=file
+QUEUE_CONNECTION=sync
+
+```
 
 ### Menjalankan migrasi dan import database
 
