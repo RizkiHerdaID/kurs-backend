@@ -5,6 +5,7 @@ Aplikasi ini menggunakan Framework Lumen (PHP).
 ## Kebutuhan Sistem
 
 - Composer
+- MySQL >= 5.4
 - PHP >= 7.3
 - OpenSSL PHP Extension
 - PDO PHP Extension
@@ -12,7 +13,7 @@ Aplikasi ini menggunakan Framework Lumen (PHP).
 
 ## Langkah-langkah instalasi
 
-### Instalasi lumen menggunakan composer
+### Instalasi Lumen menggunakan composer
 
 Pastikan composer telah terinstall
 
@@ -22,7 +23,27 @@ Jalankan perintah composer berikut pada root folder:
 composer install
 ```
 
-Nb: Proses instalasi menggunakan composer pada Windows umumnya akan berlangsung cukup lama.
+Catatan: Proses instalasi menggunakan composer pada Windows umumnya akan berlangsung cukup lama.
+
+### Membuat file .env
+
+Copy & paste file .env.example lalu isi variable-variable yang berhubungan dengan database. Dalam petunjuk ini saya misalkan Anda menamakan database aplikasi dengan nama "kurs"
+
+### Menjalankan migrasi dan import database
+
+Buatlah basis data kosong menggunakan nama "kurs" sesuai variable yang diisi pada file .env tadi.
+
+Jalankan perintah berikut untuk melakukan migrasi database
+
+```bash
+php artisan migrate
+```
+
+Lalu import data sql yang sudah disedikan pada folder berikut:
+
+```
+database\db.sql
+```
 
 ### Menjalankan aplikasi
 
@@ -34,7 +55,7 @@ php -S localhost:8000 -t public
 
 ### Aplikasi berhasil running
 
-Proses selesai dan jangan menutup aplikasi ini, selanjutnya jalankan aplikasi web.
+Proses selesai dan jangan tutup aplikasi ini, selanjutnya jalankan aplikasi web pada repository yang terpisah. [Klik Disini](https://github.com/RizkiHerdaID/kurs-web)
 
 ## Postman Collection
 
